@@ -16,7 +16,7 @@ RELEASE="$(rpm -E %fedora)"
 rpm-ostree install emacs ripgrep make fastfetch bash
 
 # Install sway and friends
-rpm-ostree install sway swaylock waybar
+# rpm-ostree install sway swaylock waybar
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc

@@ -15,7 +15,7 @@
 # - "base"
 #
 #  "aurora", "bazzite", "bluefin" or "ucore" may also be used but have different suffixes.
-ARG SOURCE_IMAGE="base"
+ARG SOURCE_IMAGE="sericea"
 
 ## SOURCE_SUFFIX arg should include a hyphen and the appropriate suffix name
 # These examples all work for silverblue/kinoite/sericea/onyx/lazurite/vauxite/base
@@ -36,13 +36,14 @@ ARG SOURCE_IMAGE="base"
 ARG SOURCE_SUFFIX="-main"
 
 ## SOURCE_TAG arg must be a version built for the specific image: eg, 39, 40, gts, latest
-ARG SOURCE_TAG="latest"
+ARG SOURCE_TAG="40"
 
 
 ### 2. SOURCE IMAGE
 ## this is a standard Containerfile FROM using the build ARGs above to select the right upstream image
-FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
+# FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 
+FROM quay.io/fedora-ostree-desktops/sericea:40
 
 ### 3. MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
